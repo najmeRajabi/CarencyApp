@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CurrencyConverterFragment">
+
+
+    <TextView
+        android:id="@+id/txv_myBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/myBalance"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txv_eur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="@dimen/textSize"
+        android:text="@string/eur"
+        app:layout_constraintEnd_toStartOf="@+id/txv_usd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_myBalance"/>
+
+    <TextView
+        android:id="@+id/txv_usd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/usd"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toStartOf="@+id/txv_bng"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txv_eur"
+        app:layout_constraintTop_toBottomOf="@id/txv_myBalance" />
+
+    <TextView
+        android:id="@+id/txv_bng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/bng"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txv_usd"
+        app:layout_constraintTop_toBottomOf="@id/txv_myBalance" />
+
+    <TextView
+        android:id="@+id/txv_exchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exchange"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_eur" />
+
+    <Spinner
+        android:id="@+id/sell_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_exchange"/>
+
+    <EditText
+        android:id="@+id/edt_sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="11000"
+        app:layout_constraintEnd_toStartOf="@id/sell_spinner"
+        app:layout_constraintTop_toBottomOf="@id/txv_exchange"/>
+    <TextView
+        android:id="@+id/txv_sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sell"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_exchange"
+        android:layout_margin="10dp"/>
+
+
+    <Spinner
+        android:id="@+id/sell_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sell_spinner"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="11000"
+        app:layout_constraintEnd_toStartOf="@id/sell_spinner"
+        app:layout_constraintTop_toBottomOf="@id/edt_sell"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="receive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_sell"
+        android:layout_margin="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="40dp"
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@id/sell_receive"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
